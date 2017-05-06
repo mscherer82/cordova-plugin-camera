@@ -304,7 +304,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             PackageManager mPm = this.cordova.getActivity().getPackageManager();
             if(intent.resolveActivity(mPm) != null)
             {
-
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 this.cordova.startActivityForResult((CordovaPlugin) this, intent, (CAMERA + 1) * 16 + returnType + 1);
             }
             else
